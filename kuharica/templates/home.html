@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Platforma za dijeljenje recepata</h1>
+
+<p>
+    Dobrodošli u web aplikaciju za dijeljenje recepata i kulinarskih savjeta.
+    Aplikacija omogućuje pregled recepata, dodavanje sastojaka i komentiranje.
+</p>
+
+<hr>
+
+{% if user.is_authenticated %}
+    <p>
+        Prijavljeni ste kao <strong>{{ user.username }}</strong>.
+    </p>
+
+    <a href="{% url 'recipes:recipe_list' %}">
+        Pregled recepata
+    </a>
+    <br><br>
+
+    <a href="{% url 'logout' %}">
+        Odjava
+    </a>
+{% else %}
+    <p>
+        Za dodavanje recepata i komentara potrebno je imati korisnički račun.
+    </p>
+
+    <a href="{% url 'login' %}">Prijava</a>
+    <br><br>
+
+    <a href="{% url 'recipes:register' %}">Registracija</a>
+    <br><br>
+
+    <a href="{% url 'recipes:recipe_list' %}">
+        Pregled recepata (bez prijave)
+    </a>
+{% endif %}
+
+{% endblock %}

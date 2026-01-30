@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Recipes</h1>
+
+<form method="get">
+    <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for recipe in recipes %}
+        <li>
+            <a href="{% url 'recipes:recipe_detail' recipe.pk %}">
+                {{ recipe.title }}
+            </a>
+            ({{ recipe.get_difficulty_display }})
+        </li>
+    {% empty %}
+        <li>No recipes found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
