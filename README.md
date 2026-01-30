@@ -2,6 +2,10 @@
 
 Web aplikacija izrađena u Django frameworku koja omogućuje korisnicima pregled, dodavanje i komentiranje recepata.
 
+Napravio: Vjeko Raguž
+
+Kolegij: Programiranje za web
+
 ## Funkcionalnosti
 - Registracija i prijava korisnika
 - CRUD operacije nad receptima
