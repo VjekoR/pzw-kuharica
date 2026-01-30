@@ -38,3 +38,15 @@ python manage.py seed
 Demo korisnik:
 username: demo
 password: demo12345
+
+## Testiranje
+```bash
+python manage.py test
+```
+
+```md
+## Navigacija
+- Home: /
+- Recipes: /recipes/
+- Login: /accounts/login/
+```
